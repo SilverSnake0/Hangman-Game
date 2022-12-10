@@ -9,7 +9,7 @@ yes = ['y', 'yes', 'ya', 'yep', 'yup', 'yeh', 'ye', 'yea', 'totally', 'sure', 'o
 
 # Define a list of words to use in the game
 words = [
-    'elephant','umbrella','sprint','keyboard','volcano','hopscotch','waterfall','jellyfish','frozen', 'giraffe', 'crocodile','flamingo','peacock','chirping','shipwreck','stretching','crawling','seagull','dolphin','hummingbird',
+    'elephant','umbrella','sprint','keyboard','volcano','hopscotch','waterfall','jellyfish','frozen', 'giraffe', 'flamingo','peacock','chirping','shipwreck','stretching','crawling','seagull','dolphin','hummingbird',
     'leaping','dancing','whistling','singing','clapping','laughing','giggling','smiling','grinning','candy',
     'icecream','waterfall','cookie','pancake','natural','avalanche','sandwich','woodchip','popcorn','mountain',
     'volcano','kingdom','milkshake','pinstripe','teapot','coffee', 'watermelon', 'blueberry', 'honeydew', ]
@@ -68,7 +68,7 @@ while incorrect_guesses < remaining_chances:
     print(f'\n{background}\n{rope}\n{head}')
 
     # Prompt the player to guess a letter
-    guess = input('\nGuess a letter: ')
+    guess = input('\nGuess a letter: ').lower()
 
     # Check if the letter has already been guessed
     if guess in guessed_letters:
