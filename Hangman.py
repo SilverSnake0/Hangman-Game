@@ -45,6 +45,7 @@ guessed_letters = []
 # Initialize a counter to keep track of the number of incorrect guesses
 incorrect_guesses = 0
 
+# Ask the player if they want to hear the instructions for the game
 hangman_instructions = input(f'Would you like to hear instructions for the Hangman game?')
 if hangman_instructions.strip().lower() in yes:
     input("\nHere is a set of instructions for the player to play the hangman game:\n\n1. A word will be randomly chosen from a list of words.\n\n2. The letters in the word will be hidden, and you will have to guess the letters in the word one by one.\n\n3. If a letter you guess is in the word, it will be revealed in the correct position in the word.\n\n4. If a letter you guess is not in the word, you will lose one chance. You have a total of 12 chances.\n\n5. You can also choose to guess the full word at any point during the game. If your guess is correct, you will win the game. If your guess is incorrect, you will lose one of your remaining chances.\n\n6. You win the game if you guess all the letters in the word before running out of chances, or if you correctly guess the full word.\n\n7. You lose the game if you run out of chances without guessing all the letters in the word.\nPress enter to continue...\n")
@@ -70,6 +71,7 @@ while incorrect_guesses < remaining_chances:
     # Prompt the player to guess a letter
     guess = input('\nGuess a letter: ').lower()
 
+    # If the letter input is a number like "5" or symbol like "^" then this message will be printed
     while guess not in alphabet:
         print('You must enter a letter in the alphabet. Please try again.')
         break
