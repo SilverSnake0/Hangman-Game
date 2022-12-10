@@ -70,22 +70,29 @@ while incorrect_guesses < remaining_chances:
     # Prompt the player to guess a letter
     guess = input('\nGuess a letter: ').lower()
 
+    while guess not in alphabet:
+        print('You must enter a letter in the alphabet. Please try again.')
+        break
+
     # Check if the letter has already been guessed
     if guess in guessed_letters:
         print('You already guessed that letter. Try again.')
     else:
         # Add the letter to the list of guessed letters
         if len(guess) == 1:
-            guessed_letters.append(guess)
-            a_z.remove(guess)
-            # Check if the player has won by guessing all the letters in the word
-            if all(letter in guessed_letters for letter in word):
-                print('\nCongratulations, you won the game!')
-                break
-            # If the letter is not in the word, increment the incorrect guess counter
-            if guess not in word:
-                incorrect_guesses += 1
-                print('Sorry, please try again.')
+            if guess in alphabet:
+                guessed_letters.append(guess)
+                a_z.remove(guess)
+                # Check if the player has won by guessing all the letters in the word
+                if all(letter in guessed_letters for letter in word):
+                    print('\nCongratulations, you won the game!')
+                    break
+                # If the letter is not in the word, increment the incorrect guess counter
+                if guess not in word:
+                    incorrect_guesses += 1
+                    print('Sorry, please try again.')
+            else:
+                pass
         # Check if the letter is in the word
         elif guess in word:
             # Checks if the guess is more than one letter
