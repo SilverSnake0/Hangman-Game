@@ -69,7 +69,7 @@ while incorrect_guesses < remaining_chances:
     print(f'\n{background}\n{rope}\n{head}')
 
     # Prompt the player to guess a letter
-    guess = input('\nGuess a letter: ').lower()
+    guess = input('\nGuess the LETTER or WORD: ').lower()
 
     # If the letter input is a number like "5" or symbol like "^" then this message will be printed
     while guess not in alphabet:
