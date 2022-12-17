@@ -73,7 +73,8 @@ while incorrect_guesses < remaining_chances:
 
     # If the letter input is a number like "5" or symbol like "^" then this message will be printed
     while guess not in alphabet:
-        print('You must enter a letter in the alphabet. Please try again.')
+        if guess != word:
+            print('You must enter a letter in the alphabet. Please try again.')
         break
 
     # Check if the letter has already been guessed
